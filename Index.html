@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untuk Kamu, Sayang ❤️</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    background:
+        radial-gradient(circle at top, #fff0f6, transparent 45%),
+        linear-gradient(135deg, #ffd1e3, #ffeaf2, #ffc5d9);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    color: #5a3a45;
+}
+
+
+/* =========================
+   BINTANG
+========================= */
+
+.star {
+    position: fixed;
+    color: white;
+    font-size: 12px;
+    opacity: 0.8;
+    animation: twinkle 2s infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+
+/* =========================
+   KONTENER
+========================= */
+
+.container {
+    width: 90%;
+    max-width: 430px;
+
+    margin: 45px auto;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.78);
+
+    border: 1px solid rgba(255,255,255,0.9);
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 15px 45px rgba(160,60,100,0.18);
+
+    position: relative;
+
+    z-index: 5;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* =========================
+   HATI UTAMA
+========================= */
+
+.big-heart {
+    font-size: 75px;
+
+    animation:
+        heartbeat 1.3s infinite,
+        floating 3s ease-in-out infinite;
+
+    filter: drop-shadow(0 8px 12px rgba(220,70,120,0.25));
+}
+
+@keyframes heartbeat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+@keyframes floating {
+
+    0%,100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -8px;
+    }
+}
+
+
+/* =========================
+   JUDUL
+========================= */
+
+h1 {
+    color: #c92f67;
+
+    font-size: 30px;
+
+    margin: 15px 0;
+
+    text-shadow:
+        0 2px 10px rgba(201,47,103,0.15);
+}
+
+.subtitle {
+    color: #98717d;
+
+    font-size: 15px;
+
+    font-style: italic;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   PEMBUKA
+========================= */
+
+.opening-text {
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #654952;
+}
+
+
+/* =========================
+   TOMBOL
+========================= */
+
+button {
+    margin-top: 20px;
+
+    padding: 15px 30px;
+
+    border: none;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(135deg, #ff4f87, #e93670);
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    font-family: Georgia, serif;
+
+    box-shadow:
+        0 8px 20px rgba(233,54,112,0.3);
+
+    animation: buttonGlow 1.8s infinite;
+
+    transition: 0.3s;
+
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.93);
+}
+
+@keyframes buttonGlow {
+
+    0%,100% {
+        box-shadow:
+            0 5px 15px rgba(233,54,112,0.25);
+    }
+
+    50% {
+        box-shadow:
+            0 5px 30px rgba(233,54,112,0.55);
+    }
+}
+
+
+/* =========================
+   PESAN
+========================= */
+
+#message {
+    display: none;
+
+    animation: appear 1.5s ease;
+}
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.message-title {
+    margin-top: 10px;
+}
+
+.letter {
+    margin-top: 25px;
+
+    padding: 25px 20px;
+
+    background: rgba(255,245,249,0.85);
+
+    border-radius: 25px;
+
+    border: 1px solid #ffd5e3;
+
+    box-shadow:
+        inset 0 0 20px rgba(255,150,180,0.08);
+}
+
+.letter p {
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    margin: 20px 0;
+
+    color: #604650;
+}
+
+
+/* =========================
+   PEMISAH
+========================= */
+
+.divider {
+    margin: 25px 0;
+
+    color: #e55b87;
+
+    letter-spacing: 8px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   KATA PENUTUP
+========================= */
+
+.final-message {
+
+    margin-top: 30px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        135deg,
+        #fff0f6,
+        #ffe0eb
+    );
+
+    color: #c52d64;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    font-weight: bold;
+}
+
+.signature {
+
+    margin-top: 25px;
+
+    color: #b72e61;
+
+    font-size: 16px;
+
+    font-style: italic;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MUSIK
+========================= */
+
+.music-button {
+
+    margin-top: 25px;
+
+    background: rgba(255,255,255,0.8);
+
+    color: #c92f67;
+
+    border: 1px solid #ffc2d6;
+
+    box-shadow: none;
+
+    animation: none;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   HATI MELAYANG
+========================= */
+
+.floating-heart {
+
+    position: fixed;
+
+    bottom: -50px;
+
+    font-size: 22px;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    animation: rise 8s linear infinite;
+
+    opacity: 0;
+}
+
+@keyframes rise {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   EFEK SENTUH
+========================= */
+
+.touch-heart {
+
+    position: fixed;
+
+    pointer-events: none;
+
+    font-size: 20px;
+
+    z-index: 100;
+
+    animation: touchUp 1s ease forwards;
+}
+
+@keyframes touchUp {
+
+    from {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform:
+            translateY(-70px)
+            scale(1.5);
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- BINTANG -->
+
+<div class="star" style="top:10%;left:15%;">✦</div>
+<div class="star" style="top:18%;left:80%;animation-delay:.5s;">✦</div>
+<div class="star" style="top:35%;left:10%;animation-delay:1s;">✧</div>
+<div class="star" style="top:50%;left:90%;animation-delay:.8s;">✦</div>
+<div class="star" style="top:70%;left:15%;animation-delay:1.5s;">✧</div>
+<div class="star" style="top:82%;left:85%;animation-delay:.3s;">✦</div>
+
+
+<!-- HATI MELAYANG -->
+
+<div class="floating-heart"
+style="left:8%;animation-delay:0s;">❤️</div>
+
+<div class="floating-heart"
+style="left:25%;animation-delay:2s;">💗</div>
+
+<div class="floating-heart"
+style="left:50%;animation-delay:4s;">💕</div>
+
+<div class="floating-heart"
+style="left:75%;animation-delay:1s;">💖</div>
+
+<div class="floating-heart"
+style="left:90%;animation-delay:5s;">💞</div>
+
+
+<!-- KONTEN -->
+
+<div class="container">
+
+
+<!-- PEMBUKA -->
+
+<div id="opening">
+
+    <div class="big-heart">
+        ❤️
+    </div>
+
+    <h1>
+        Untuk Kamu...
+    </h1>
+
+    <div class="subtitle">
+        Ada sesuatu yang ingin aku sampaikan 💌
+    </div>
+
+    <p class="opening-text">
+
+        Aku tahu akhir-akhir ini kamu
+        lagi nggak enak badan...
+
+        <br><br>
+
+        Jadi sebelum kamu istirahat,
+        aku mau kasih kamu sesuatu.
+
+        <br><br>
+
+        Bukan hadiah mahal,
+        bukan sesuatu yang mewah...
+
+        <br>
+
+        cuma beberapa kata
+        dari seseorang yang
+        benar-benar sayang sama kamu. 🥺❤️
+
+    </p>
+
+
+    <button onclick="openMessage()">
+        💌 Buka Surat Untukku
+    </button>
+
+</div>
+
+
+<!-- PESAN -->
+
+<div id="message">
+
+    <div class="big-heart">
+        💗
+    </div>
+
+    <h1 class="message-title">
+        Untuk Kamu,
+        <br>
+        yang Aku Sayang ❤️
+    </h1>
+
+    <div class="subtitle">
+        Bacanya pelan-pelan ya...
+    </div>
+
+
+    <div class="letter">
+
+
+        <p>
+            Hai sayang... 🥺
+        </p>
+
+
+        <p>
+            Aku mungkin nggak selalu tahu
+            cara terbaik untuk membuat kamu
+            merasa lebih baik.
+        </p>
+
+
+        <p>
+            Tapi ada satu hal yang aku tahu...
+            aku selalu peduli sama kamu.
+            Bahkan ketika kamu nggak bilang
+            kalau kamu sedang nggak baik-baik saja.
+        </p>
+
+
+        <div class="divider">
+            ❤️ · ❤️ · ❤️
+        </div>
+
+
+        <p>
+            Kalau hari ini badan kamu terasa
+            capek, istirahatlah ya.
+        </p>
+
+        <p>
+            Jangan terlalu memaksakan diri.
+            Jangan lupa minum yang cukup,
+            makan kalau sudah waktunya,
+            dan biarkan tubuh kamu
+            mendapatkan waktu untuk pulih.
+        </p>
+
+
+        <p>
+            Aku pengen banget melihat kamu
+            kembali tersenyum seperti biasanya.
+        </p>
+
+
+        <p>
+            Karena entah kenapa,
+            senyum kamu selalu punya cara
+            sendiri untuk membuat hari aku
+            terasa lebih indah. 💕
+        </p>
+
+
+        <div class="divider">
+            ✦ 💗 ✦
+        </div>
+
+
+        <p>
+            Kalau kamu sedang capek,
+            kamu boleh istirahat.
+        </p>
+
+        <p>
+            Kalau kamu sedang sedih,
+            kamu boleh cerita.
+        </p>
+
+        <p>
+            Kalau kamu sedang takut,
+            kamu nggak harus menghadapinya
+            sendirian.
+        </p>
+
+
+        <p>
+            Dan kalau suatu hari kamu merasa
+            nggak ada siapa-siapa...
+        </p>
+
+
+        <p>
+            ingat satu hal kecil ini:
+            <br><br>
+
+            <b>
+                ada seseorang di sini
+                yang selalu ingin melihat
+                kamu baik-baik saja. ❤️
+            </b>
+        </p>
+
+
+        <div class="divider">
+            💕 💕 💕
+        </div>
+
+
+        <p>
+            Aku nggak bisa berjanji
+            kalau aku selalu punya
+            kata-kata yang sempurna.
+        </p>
+
+        <p>
+            Tapi aku bisa berjanji
+            kalau rasa sayangku
+            ke kamu bukan cuma
+            datang ketika semuanya
+            sedang baik-baik saja.
+        </p>
+
+
+        <p>
+            Bahkan ketika kamu sedang
+            sakit, lelah, marah,
+            sedih, atau sedang nggak
+            ingin bicara dengan siapa pun...
+        </p>
+
+
+        <p>
+            kamu tetap seseorang
+            yang sangat berarti
+            buat aku. 🥹❤️
+        </p>
+
+
+    </div>
+
+
+    <!-- PESAN TERAKHIR -->
+
+    <div class="final-message">
+
+        Cepat sembuh ya, sayang... 🥺💗
+
+        <br><br>
+
+        Aku cuma ingin kamu
+        kembali sehat,
+        kembali ceria,
+        dan kembali tersenyum.
+
+        <br><br>
+
+        Karena senyum kamu
+        adalah salah satu hal
+        yang paling aku suka. ❤️
+
+    </div>
+
+
+    <div class="signature">
+
+        Dengan penuh rasa sayang,
+
+        <br>
+
+        — seseorang yang
+        selalu ingin kamu baik-baik saja ❤️
+
+        <br><br>
+
+        💗🌷💗
+
+    </div>
+
+
+    <!-- MUSIK -->
+
+    <button
+        class="music-button"
+        onclick="toggleMusic()"
+        id="musicButton">
+
+        🎵 Putar Musik
+
+    </button>
+
+
+</div>
+
+</div>
+
+
+<!-- MUSIK -->
+
+<audio id="music" loop>
+
+    <source
+        src="musik.mp3"
+        type="audio/mpeg">
+
+</audio>
+
+
+<script>
+
+
+/* =========================
+   BUKA PESAN
+========================= */
+
+function openMessage() {
+
+    document.getElementById("opening").style.display = "none";
+
+    document.getElementById("message").style.display = "block";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+    let music =
+        document.getElementById("music");
+
+    music.play().then(function() {
+
+        document.getElementById("musicButton").innerHTML =
+            "🎵 Musik Sedang Diputar";
+
+    }).catch(function() {
+
+        document.getElementById("musicButton").innerHTML =
+            "🎵 Putar Musik";
+
+    });
+
+}
+
+
+/* =========================
+   TOMBOL MUSIK
+========================= */
+
+function toggleMusic() {
+
+    let music =
+        document.getElementById("music");
+
+    let button =
+        document.getElementById("musicButton");
+
+
+    if (music.paused) {
+
+        music.play();
+
+        button.innerHTML =
+            "🎵 Musik Sedang Diputar";
+
+    } else {
+
+        music.pause();
+
+        button.innerHTML =
+            "🔇 Musik Dimatikan";
+
+    }
+
+}
+
+
+/* =========================
+   HATI SAAT DISENTUH
+========================= */
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        let heart =
+            document.createElement("div");
+
+        heart.className =
+            "touch-heart";
+
+        heart.innerHTML =
+            "💗";
+
+        heart.style.left =
+            event.clientX + "px";
+
+        heart.style.top =
+            event.clientY + "px";
+
+        document.body.appendChild(heart);
+
+
+        setTimeout(function() {
+
+            heart.remove();
+
+        }, 1000);
+
+    }
+);
+
+</script>
+
+</body>
+  </html>
